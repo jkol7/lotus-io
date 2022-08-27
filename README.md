@@ -1,5 +1,5 @@
-# Scranton Tranquility Yoga Studio
+# Lotus.io
 
-Currently working on a website for a local yoga studio. It will be using an API at first for yoga poses then move to custom data.
+Currently working on a website for a yoga resource app. It will be using an API for yoga poses.
 
 ReactJS, MaterialUI, HTML, CSS
