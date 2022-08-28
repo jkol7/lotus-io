@@ -78,17 +78,17 @@ body {
     transition: 0.3s all ease-in-out;
   }
   
-  .exercise-card img {
+  .category-card img {
     height: 326px;
   }
   
-  .bodyPart-card {
+  .category-card {
     transform: scale(1, 1);
     transition: 0.3s all ease-in-out;
   }
   
-  .exercise-card:hover,
-  .bodyPart-card:hover {
+  .pose-card:hover,
+  .category-card:hover {
     transform: scale(1.1, 1.1);
   }
   
@@ -97,7 +97,7 @@ body {
     border: 1px solid #FF2625 !important;
   }
   
-  .exercise-video {
+  .-video {
     display: flex;
     flex-direction: column;
     gap: 24px;

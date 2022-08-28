@@ -13,7 +13,7 @@ function Navbar() {
       justifyContent: 'none' }} px="20px"
     >
     <Link to="/">
-      <img src={Logo} alt="logo" style={{ width: '48px', height: '48px', margin: '0px 20px' }} />
+      <img src={Logo} alt="logo" style={{ width: '75px', height: '48px', margin: '0px 20px' }} />
     </Link>
     <Stack
       direction="row"

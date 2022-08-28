@@ -2,19 +2,20 @@ import React, { useState } from 'react';
 import { Box } from '@mui/material';
 
 import Poses from '../components/Poses';
-import SearchPoses from '../components/SearchPoses';
 import HeroBanner from '../components/HeroBanner';
+import SearchPoses from '../components/SearchPoses'
 
 function Home() {
 
   const [poses, setPoses] = useState([]);
-  const [bodyPart, setBodyPart] = useState('all');
+  const [categories, setCategories] = useState('all');
+
 
   return (
     <Box>
-    <HeroBanner />
-    <SearchPoses setPoses={setPoses} bodyPart={bodyPart} setBodyPart={setBodyPart} />
-    <Poses setPoses={setPoses} poses={poses} bodyPart={bodyPart} />
+    <HeroBanner setPoses={setPoses} categories={categories} setCategories={setCategories} />
+    <SearchPoses setCategories={setCategories} poses={poses} categories={categories} />
+    <Poses />
    </Box>
   )
 }
