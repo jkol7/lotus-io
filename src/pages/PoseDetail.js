@@ -17,7 +17,6 @@ const PoseDetail = () => {
 
     const fetchPoseData = async () => {
       const yogaPoseUrl = ' https://lightning-yoga-api.herokuapp.com/yoga_poses';
-      const youtubeSearchUrl = 'https://youtube-search-and-download.p.rapidapi.com';
 
       const data = await fetch(`${yogaPoseUrl}/${id}`);
       const poseDetailData = await data.json()
@@ -34,7 +33,7 @@ const PoseDetail = () => {
       }
       )
     .then((response) => {
-        console.log(response)
+        setPoseVideos(response.data)
     })
     .catch((error) => {
         console.log(error)

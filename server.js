@@ -1,13 +1,12 @@
 
 
+require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
 const axios = require('axios')
-const dotenv = require('dotenv')
 
 const app = express()
 app.use(cors())
-dotenv.config()
 
 
 app.get('/youtube', async (req, res) => {
@@ -18,7 +17,7 @@ app.get('/youtube', async (req, res) => {
         
         url: `https://youtube-search-and-download.p.rapidapi.com/search?query=${pose}`,
         headers: {
-            'X-RapidAPI-Key': '148e40854cmsh1b041176a612d3ap1d65c4jsnf57617cc2279',
+            'X-RapidAPI-Key': process.env.RAPID_API_KEY,
             'X-RapidAPI-Host': 'youtube-search-and-download.p.rapidapi.com'
           }
     } )

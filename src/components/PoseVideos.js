@@ -9,7 +9,7 @@ const PoseVideos = ({ poseVideos, name}) => {
         Watch <span style={{ color: '#FF2625', textTransform: 'capitalize' }}>{name}</span> videos
       </Typography>
     <Stack sx={{ flexDirection: { lg: 'row' }, gap: { lg: '110px', xs: '0px' } }} justifyContent="flex-start" flexWrap="wrap" alignItems="center">
-    {poseVideos?.slice(0, 3)?.map((item, index) => (
+    {poseVideos?.slice(0, 6)?.map((item, index) => (
           <a
             key={index}
             className="pose-video"
