@@ -23,8 +23,8 @@ return (
     <Typography variant="h3" fontWeight="bold" sx={{ fontSize: { lg: '44px', xs: '30px' } }} mb="46px">
       Showing Results</Typography>
     <Stack direction="row" sx={{ gap: { lg: '107px', xs: '50px' } }} flexWrap="wrap" justifyContent="center">
-    {poses.map((pose, index) => (     
-      <p><PoseCard key={index} pose={pose}></PoseCard></p>
+    {poses.map((pose) => (     
+      <p><PoseCard key={pose.id} pose={pose}></PoseCard></p>
      ) ) }
     </Stack>
   </Box>
