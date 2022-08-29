@@ -3,12 +3,10 @@ import { Box, Button, Stack, TextField, Typography } from '@mui/material'
 import { poseOptions, fetchData } from '../utils/fetchData';
 import {HorizontalScrollbar} from './HorizontalScrollbar';
 
-function SearchPoses() {
+function SearchPoses({ category, setCategory, poses, setPoses }) {
 
   const [search, setSearch] = useState('')
-  const [poses, setPoses] = useState('')
-  const [categories, setCategories] = useState([]);
-
+  const [categories, setCategories] = useState([])
 
 
 
@@ -16,7 +14,8 @@ function SearchPoses() {
 
     const getCategoryData = async () => {
     const response = await fetch('https://lightning-yoga-api.herokuapp.com/yoga_categories')
-    const data = await response.json()
+    const data = await response.json()  
+    
     const categoryData = await data.items.map(item => item.name)
     
     let categoryShortened = []
@@ -46,8 +45,6 @@ function SearchPoses() {
                  || item.english_name.toLowerCase().includes(search)
         );
 
-        console.log(searchedPoses)
-
         window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' });
 
         setSearch('');
@@ -60,22 +57,7 @@ function SearchPoses() {
       }
 
     }
-     /* const searchedExercises = exercisesData.filter(
-        (item) => item.name.toLowerCase().includes(search)
-               || item.target.toLowerCase().includes(search)
-               || item.equipment.toLowerCase().includes(search)
-               || item.bodyPart.toLowerCase().includes(search),
-      );
-
-      window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' });
-
-      setSearch('');
-      setExercises(searchedExercises);
-    }
-    */
   }
-
-
 
   return (
     <Stack alignItems="center" mt="37px" justifyContent="center" p="20px">
@@ -96,7 +78,7 @@ function SearchPoses() {
       </Button>
     </Box>
     <Box sx={{ position: 'relative', width: '100%', p: '20px' }}>
-    <HorizontalScrollbar data={categories} />
+    <HorizontalScrollbar data={categories} category={category} setCategory={setCategory}/>
     </Box>
   </Stack>
   )

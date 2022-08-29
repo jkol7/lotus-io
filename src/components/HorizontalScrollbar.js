@@ -2,9 +2,12 @@ import React, { useContext } from 'react'
 import { Box, Typography} from '@mui/material'
 import Category from './Category'
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
+import { v4 as uuidv4 } from 'uuid';
+
 
 import RightArrowIcon from '../assets/icons/right-arrow.png';
 import LeftArrowIcon from '../assets/icons/left-arrow.png';
+
 
 
 function LeftArrow() {
@@ -29,18 +32,24 @@ function RightArrow() {
   );
 }
 
-  const HorizontalScrollbar = ({data, categories, setCategories}) => (
-      
+
+
+  const HorizontalScrollbar = ({data, category, setCategory}) => (
+
+    
     <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
+     
       {data.map((item) => (
         <Box
           key={item}
-          itemID={item}
+          itemID={uuidv4()}
           title={item}
-          m="0 40px"
+          m="0 60px"
         >
           <Category 
-          name={item} categories={categories} setCategories={setCategories}/>
+          name={item}
+          category={category}
+          setCategory={setCategory}/>
           </Box>
       ))} 
     </ScrollMenu>

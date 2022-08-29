@@ -90,6 +90,11 @@ body {
   .pose-card:hover,
   .category-card:hover {
     transform: scale(1.1, 1.1);
+    background: '#FFF'; 
+    width: '270px'; 
+    height: '282px';
+    cursor: 'pointer'; 
+    gap: '47px'; 
   }
   
   .search-btn:hover {
