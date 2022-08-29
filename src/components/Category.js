@@ -1,7 +1,8 @@
 import { Stack, Typography } from '@mui/material';
 import Icon from '../assets/icons/gym.png';
 
-const Category = ({ name, category, setCategory }) => (
+
+const Category = ({ name, category, setCategory, categoryID }) => (
   <Stack
     type="button"
     alignItems="center"
@@ -9,7 +10,7 @@ const Category = ({ name, category, setCategory }) => (
     className="category-card"
     sx={ {background: '#fff', borderBottomLeftRadius: '20px', width: '270px', height: '282px', cursor: 'pointer', gap: '47px' }}
     onClick={() => {
-      setCategory(name);
+      setCategory(categoryID);
       window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' });
         }}
     > 

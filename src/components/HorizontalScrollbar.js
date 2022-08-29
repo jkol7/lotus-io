@@ -34,24 +34,24 @@ function RightArrow() {
 
 
 
-  const HorizontalScrollbar = ({data, category, setCategory}) => (
+  const HorizontalScrollbar = ({categories, category, setCategory}) => (
 
-    
+
     <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
-     
-      {data.map((item) => (
+      {categories.map((item, index) => (
         <Box
-          key={item}
-          itemID={uuidv4()}
+          key={index}
+          itemID={index}
           title={item}
           m="0 60px"
         >
           <Category 
           name={item}
           category={category}
+          categoryID={index}
           setCategory={setCategory}/>
           </Box>
-      ))} 
+      ))}
     </ScrollMenu>
   );
 

@@ -63,7 +63,7 @@ body {
   
   }
   
-  .exercise-card {
+  .pose-card {
     width: 400px;
     height: 445px;
     background: #fff;
@@ -78,7 +78,7 @@ body {
     transition: 0.3s all ease-in-out;
   }
   
-  .category-card img {
+  .pose-card img {
     height: 326px;
   }
   

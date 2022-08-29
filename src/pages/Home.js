@@ -8,13 +8,13 @@ import SearchPoses from '../components/SearchPoses'
 function Home() {
 
   const [poses, setPoses] = useState([]);
-  const [category, setCategory] = useState('')
+  const [category, setCategory] = useState([])
 
   return (
     <Box>
     <HeroBanner/>
     <SearchPoses setCategory={setCategory} poses={poses} setPoses={setPoses} category={category} />
-    <Poses setPoses={setPoses} poses={poses}/>
+    <Poses setPoses={setPoses} poses={poses} category={category}/>
    </Box>
   )
 }

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Box, Button, Stack, TextField, Typography } from '@mui/material'
-import { poseOptions, fetchData } from '../utils/fetchData';
 import {HorizontalScrollbar} from './HorizontalScrollbar';
 
 function SearchPoses({ category, setCategory, poses, setPoses }) {
@@ -78,7 +77,7 @@ function SearchPoses({ category, setCategory, poses, setPoses }) {
       </Button>
     </Box>
     <Box sx={{ position: 'relative', width: '100%', p: '20px' }}>
-    <HorizontalScrollbar data={categories} category={category} setCategory={setCategory}/>
+    <HorizontalScrollbar categories={categories} category={category} setCategory={setCategory}/>
     </Box>
   </Stack>
   )
