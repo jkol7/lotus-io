@@ -16,6 +16,9 @@ const PoseDetail = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
     const fetchPoseData = async () => {
+
+      // Gets pose image and category information from Yoga API.
+      
       const yogaPoseUrl = ' https://lightning-yoga-api.herokuapp.com/yoga_poses';
 
       const data = await fetch(`${yogaPoseUrl}/${id}`);
@@ -25,6 +28,9 @@ const PoseDetail = () => {
 
       let poseCategoryNames = await poseDetailData.yoga_categories.map(item=>item.name).join(', ')
       setCategoryDetail(poseCategoryNames)
+
+      // Get request with Axios because of API keys. 
+      // Uses the current pose and returns Youtube search data.
 
       await axios.get('/youtube', {
         params: {

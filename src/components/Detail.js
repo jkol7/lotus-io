@@ -4,6 +4,8 @@ import { Typography, Stack, Button } from '@mui/material';
 
 const Detail = ( { poseDetail, categoryDetail }) => {
     
+  // Creates the detail above the Youtube links on pose pages
+
     const { img_url, english_name, sanskrit_name } = poseDetail 
     
     return (

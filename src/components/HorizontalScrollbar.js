@@ -7,6 +7,10 @@ import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import RightArrowIcon from '../assets/icons/right-arrow.png';
 import LeftArrowIcon from '../assets/icons/left-arrow.png';
 
+
+
+// Icons for the Yoga categories. These are not in the API so need to be created here.
+
 import armBalanceIcon from '../assets/icons/arm-balance-icon.png'
 import backbendIcon from '../assets/icons/backbend-icon.png'
 import balancingIcon from '../assets/icons/balancing-icon.png'
@@ -19,6 +23,9 @@ import restorativeIcon from '../assets/icons/restorative-icon.png'
 import seatedIcon from '../assets/icons/seated-icon.png'
 import standingIcon from '../assets/icons/standing-icon.png'
 import strengthIcon from '../assets/icons/strength-icon.png'
+
+
+// Dictionary to match the category name with the icon
 
 const iconDict = {
   "Core": coreIcon,

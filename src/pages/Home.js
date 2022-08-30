@@ -10,6 +10,8 @@ function Home() {
   const [poses, setPoses] = useState([]);
   const [category, setCategory] = useState([])
 
+  // Passes state down to components. Could use Context API here if structure expands.
+  
   return (
     <Box>
     <HeroBanner/>

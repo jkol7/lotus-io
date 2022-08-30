@@ -2,6 +2,9 @@ import React from 'react'
 import { Typography, Box, Stack } from '@mui/material';
 
 
+
+// Maps through poseVideos from Youtube API to create pose video section.
+
 const PoseVideos = ({ poseVideos, name}) => {
   return (
     <Box sx={{ marginTop: { lg: '0px', xs: '30px' } }} p="20px">

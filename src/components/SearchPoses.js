@@ -15,9 +15,14 @@ function SearchPoses({ category, setCategory, setPoses }) {
     const response = await fetch('https://lightning-yoga-api.herokuapp.com/yoga_categories')
     const data = await response.json()  
     
+
+    // Gets all category data to be used in horizontal scrollbar.
+
     const categoryData = await data.items.map(item => item.name)
     
     let categoryShortened = []
+
+    // Shortens category names because of reduntant use of yoga and poses.
 
     for (let item of categoryData){
         let word = item.replace('Yoga', '').replace('Poses', '').trim()
@@ -31,6 +36,9 @@ function SearchPoses({ category, setCategory, setPoses }) {
     }, [])
 
 
+
+  // Sets poses state from search by matching the API pose data
+  
   const handleSearch = async () => {
     if (search) {
       try {

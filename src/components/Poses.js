@@ -5,6 +5,9 @@ import { Box, Stack, Typography } from '@mui/material';
 
 const Poses = ({ setPoses, poses, category }) => {
 
+
+// Sets the specific category data from the API. Starts with core yoga poses shown.
+
 useEffect(() => {
 
   const getCategoryData = async () => {
@@ -18,6 +21,8 @@ useEffect(() => {
 if (!poses.length) return <Loader />;
 
 return (
+
+// Maps through poses and creates pose cards with data passed for each.
 
 <Box id='poses' sx={{ mt: { lg: '109px' } }} mt="50px" p="20px">
     <Typography variant="h3" fontWeight="bold" sx={{ fontSize: { lg: '44px', xs: '30px' } }} mb="46px">

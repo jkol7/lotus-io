@@ -4,6 +4,9 @@ import { Box, Stack, Typography } from '@mui/material';
 import HeroBannerImage from '../assets/images/banner.jpg';
 
 const HeroBanner = () => (
+
+  // Top section above search bar
+
     <Box 
       sx={{ mt: { lg: '150px', xs: '70px' }, 
       ml: { xl: '40px', lg: '40px' } }} 

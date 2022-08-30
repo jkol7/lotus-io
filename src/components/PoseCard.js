@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Stack, Typography } from '@mui/material';
 
+
+// Pose cards that appear after searching or clicking on a yoga category. This is a single card.
+
 const PoseCard = ({ pose }) => (
   <Link className="pose-card" to={`/pose/${pose.id}`}>
     <img src={pose.img_url} alt={pose.english_name} loading="lazy" />

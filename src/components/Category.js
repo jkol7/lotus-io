@@ -3,6 +3,8 @@ import { Stack, Typography } from '@mui/material';
 
 const Category = ({ name, setCategory, categoryID, iconType }) => (
 
+  // Sets the Yoga CategoryID when clicking the category card.
+  
   <Stack
     type="button"
     alignItems="center"
