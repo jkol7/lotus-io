@@ -29,7 +29,7 @@ const HeroBanner = () => (
       Popular poses and more
     </Typography>
     <Stack>
-        <a href="#exercises" 
+        <a href="#poses" 
         style={{ marginTop: '45px', textDecoration: 'none', 
         width: '200px', textAlign: 'center', 
         background: '#3B9AE1', padding: '14px', 
