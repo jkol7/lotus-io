@@ -15,7 +15,7 @@ function LeftArrow() {
 
   return (
     <Typography onClick={() => scrollPrev()} className="left-arrow">
-            <img src={LeftArrowIcon} alt="left-arrow" />
+      Click
     </Typography>
   );
 }
@@ -26,8 +26,7 @@ function RightArrow() {
 
   return (
     <Typography onClick={() => scrollNext()} className="right-arrow">
-            <img src={RightArrowIcon} alt="right-arrow" />
-    </Typography>
+      Click    </Typography>
   );
 }
 
@@ -40,7 +39,7 @@ function RightArrow() {
       {categories.map((item, index) => (
         <Box
           key={index}
-          itemID={index}
+          itemId={index}
           title={item}
           m="0 60px"
         >
