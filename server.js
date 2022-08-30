@@ -25,14 +25,6 @@ app.get('/youtube', async (req, res) => {
 })
 
 
-app.get('/easy', async (req, res) => {
-
-        console.log('youre here')
-        res.json('Hello')
-})
-
-
-
   
 const PORT = process.env.PORT || 5000;
 
