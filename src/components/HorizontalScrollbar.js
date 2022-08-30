@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import { Box, Typography} from '@mui/material'
 import Category from './Category'
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
-import { v4 as uuidv4 } from 'uuid';
 
 
 import RightArrowIcon from '../assets/icons/right-arrow.png';
