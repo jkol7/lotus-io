@@ -6,7 +6,7 @@ const PoseVideos = ({ poseVideos, name}) => {
   return (
     <Box sx={{ marginTop: { lg: '0px', xs: '20px' } }} p="20px">
 <Typography sx={{ fontSize: { lg: '44px', xs: '25px' } }} fontWeight={700} color="#000" mb="33px">
-        Watch <span style={{ color: '#FF2625', textTransform: 'capitalize' }}>{name}</span> videos
+        Watch <span style={{ color: '#3B9AE1', textTransform: 'capitalize' }}>{name}</span> videos
       </Typography>
     <Stack sx={{ flexDirection: { lg: 'row' }, gap: { lg: '110px', xs: '0px' } }} justifyContent="flex-start" flexWrap="wrap" alignItems="center">
     {poseVideos?.slice(0, 6)?.map((item, index) => (

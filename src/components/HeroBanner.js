@@ -7,19 +7,23 @@ const HeroBanner = () => (
     <Box 
       sx={{ mt: { lg: '212px', xs: '70px' }, 
       ml: { sm: '50px' } }} 
-      position="relative" p="20px"
+      position={{ lg: "relative", sm: "static", xs: "static" }}
+      display= {{ lg: "block", sm: "flex", xs: "flex" }}
+      flexDirection= {{ sm: "column", xs: "column "}}
+      alignItems= {{ sm: "center ", xs: "center "}}
     >
     <Typography color="#3B9AE1" fontWeight="600" fontSize="26px">Wellness Resource</Typography>
     <Typography 
       fontWeight={700} 
       sx={{ fontSize: { lg: '44px', xs: '40px' } }} 
       mb="23px" mt="30px"
+      textAlign={{ xl: "left", lg: "left", sm: "center", xs: "center"}}
     >
-        Yoga, Mindfulness <br />
-        And Community
+        Explore Yoga <br />
+        And Mindfulness
     </Typography>
     <Typography fontSize="22px" fontFamily="Alegreya" lineHeight="35px">
-      Personalized wellness plans
+      Popular poses and more
     </Typography>
     <Stack>
         <a href="#exercises" 

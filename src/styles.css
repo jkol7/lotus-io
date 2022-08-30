@@ -138,19 +138,17 @@ body {
       display: none;
     }
   
-    .exercise-card {
-      width: 320px;
-    }
-  
-    .exercise-video {
-      width: 320px;
-      height: 300px;
-    }
-  
   }
   
-  @media screen and (max-width:400px) {
-    .exercise-card {
-      width: 280px;
+  @media screen and (max-width:700px) {
+   
+    .hero-box-mobile {
+      display: flex;
+      padding: 0; 
+      flex-direction: center; 
+      justify-content: center;
+     background-color: red;  }
+
+
     }
-  }
+  
