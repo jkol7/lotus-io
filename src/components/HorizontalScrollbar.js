@@ -7,6 +7,33 @@ import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import RightArrowIcon from '../assets/icons/right-arrow.png';
 import LeftArrowIcon from '../assets/icons/left-arrow.png';
 
+import armBalanceIcon from '../assets/icons/arm-balance-icon.png'
+import backbendIcon from '../assets/icons/backbend-icon.png'
+import balancingIcon from '../assets/icons/balancing-icon.png'
+import chestOpeningIcon from '../assets/icons/chest-opening-icon.png'
+import coreIcon from '../assets/icons/core-icon.png'
+import forwardBendIcon from '../assets/icons/forward-bend-icon.png'
+import hipOpeningIcon from '../assets/icons/hip-opening-icon.png'
+import inversionIcon from '../assets/icons/inversion-icon.png'
+import restorativeIcon from '../assets/icons/restorative-icon.png'
+import seatedIcon from '../assets/icons/seated-icon.png'
+import standingIcon from '../assets/icons/standing-icon.png'
+import strengthIcon from '../assets/icons/strength-icon.png'
+
+const iconDict = {
+  "Core": coreIcon,
+  "Seated": seatedIcon,
+  "Strengthening": strengthIcon,
+  "Chest Opening": chestOpeningIcon,
+  "Backbend": backbendIcon,
+  "Forward Bend": forwardBendIcon,
+  "Hip Opening": hipOpeningIcon,
+  "Standing": standingIcon,
+  "Restorative": restorativeIcon,
+  "Arm Balance": armBalanceIcon,
+  "Balancing": balancingIcon,
+  "Inversion": inversionIcon
+ }
 
 
 function LeftArrow() {
@@ -15,7 +42,7 @@ function LeftArrow() {
 
   return (
     <Typography onClick={() => scrollPrev()} className="left-arrow">
-      Click
+            <img src={LeftArrowIcon} alt="right-arrow" />
     </Typography>
   );
 }
@@ -26,7 +53,8 @@ function RightArrow() {
 
   return (
     <Typography onClick={() => scrollNext()} className="right-arrow">
-      Click    </Typography>
+            <img src={RightArrowIcon} alt="right-arrow" />
+    </Typography>
   );
 }
 
@@ -34,7 +62,7 @@ function RightArrow() {
 
   const HorizontalScrollbar = ({categories, category, setCategory}) => (
 
-
+    
     <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
       {categories.map((item, index) => (
         <Box
@@ -47,7 +75,9 @@ function RightArrow() {
           name={item}
           category={category}
           categoryID={index}
-          setCategory={setCategory}/>
+          setCategory={setCategory}
+          iconType={iconDict[item]}
+          />
           </Box>
       ))}
     </ScrollMenu>

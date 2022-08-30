@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Box, Button, Stack, TextField, Typography } from '@mui/material'
 import {HorizontalScrollbar} from './HorizontalScrollbar';
 
-function SearchPoses({ category, setCategory, poses, setPoses }) {
+function SearchPoses({ category, setCategory, setPoses }) {
 
   const [search, setSearch] = useState('')
   const [categories, setCategories] = useState([])

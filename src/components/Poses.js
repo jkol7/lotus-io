@@ -21,7 +21,7 @@ return (
 
 <Box id='poses' sx={{ mt: { lg: '109px' } }} mt="50px" p="20px">
     <Typography variant="h3" fontWeight="bold" sx={{ fontSize: { lg: '44px', xs: '30px' } }} mb="46px">
-      Showing Results</Typography>
+     </Typography>
     <Stack direction="row" sx={{ gap: { lg: '107px', xs: '50px' } }} flexWrap="wrap" justifyContent="center">
     {poses.map((pose) => (     
       <p><PoseCard key={pose.id} pose={pose}></PoseCard></p>

@@ -5,12 +5,12 @@ import HeroBannerImage from '../assets/images/banner.jpg';
 
 const HeroBanner = () => (
     <Box 
-      sx={{ mt: { lg: '212px', xs: '70px' }, 
-      ml: { sm: '50px' } }} 
-      position={{ lg: "relative", sm: "static", xs: "static" }}
-      display= {{ lg: "block", sm: "flex", xs: "flex" }}
-      flexDirection= {{ sm: "column", xs: "column "}}
-      alignItems= {{ sm: "center ", xs: "center "}}
+      sx={{ mt: { lg: '150px', xs: '70px' }, 
+      ml: { xl: '40px', lg: '40px' } }} 
+      position={{ lg: "relative", md: "static", sm: "static", xs: "static" }}
+      display= {{ lg: "block", md: "flex", sm: "flex", xs: "flex" }}
+      flexDirection= {{ sm: "column", md: "column", xs: "column"}}
+      alignItems= {{ sm: "center ", md: "center", xs: "center"}}
     >
     <Typography color="#3B9AE1" fontWeight="600" fontSize="26px">Wellness Resource</Typography>
     <Typography 
