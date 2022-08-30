@@ -10,6 +10,8 @@ const app = express()
 const buildPath = path.join(__dirname, '..', 'build');
 app.use(express.static(buildPath));
 
+app.get("/")
+
 app.get('/youtube', async (req, res) => {
 
     const pose = req.query.id + " pose"
