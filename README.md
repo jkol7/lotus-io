@@ -1,6 +1,6 @@
 # Lotus.io
 
-Currently working on a website for a yoga resource app. It will be using an API for yoga poses.
+Yoga pose and wellness resource app. Uses a Yoga API and Youtube API.
 
 ReactJS, MaterialUI, HTML, CSS
 
