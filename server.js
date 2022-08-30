@@ -9,8 +9,7 @@ const cors = require('cors');
 
 const app = express()
 
-const buildPath = path.join(__dirname, '..', 'build');
-app.use(express.static(buildPath));
+app.use(express.static('client/build'))
 
 app.get('/', (req, res)=> {
     res.send('Working main directory')
