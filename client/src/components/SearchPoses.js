@@ -8,12 +8,13 @@ function SearchPoses({ category, setCategory, setPoses }) {
 
   useEffect(() => {
     const getCategoryData = async () => {
-      const response = await fetch("/merged-yoga-poses.json");
+      const response = await fetch("/yoga-categories.json");
       const data = await response.json();
 
       // Gets all category data to be used in horizontal scrollbar.
 
-      const categoryData = await data.items.map((item) => item.name);
+      console.log("Here's the category data", data);
+      const categoryData = await data.map((item) => item.name);
 
       let categoryShortened = [];
 

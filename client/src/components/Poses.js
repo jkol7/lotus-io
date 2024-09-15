@@ -37,9 +37,7 @@ const Poses = ({ setPoses, poses, category }) => {
         justifyContent="center"
       >
         {poses.map((pose) => (
-          <p>
-            <PoseCard key={pose.id} pose={pose}></PoseCard>
-          </p>
+          <PoseCard key={pose.id} pose={pose}></PoseCard>
         ))}
       </Stack>
     </Box>
