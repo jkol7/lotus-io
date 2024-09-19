@@ -13,7 +13,6 @@ function SearchPoses({ category, setCategory, setPoses }) {
 
       // Gets all category data to be used in horizontal scrollbar.
 
-      console.log("Here's the category data", data);
       const categoryData = await data.map((item) => item.name);
 
       let categoryShortened = [];
@@ -25,6 +24,7 @@ function SearchPoses({ category, setCategory, setPoses }) {
         categoryShortened.push(word);
       }
 
+      console.log("This is categoryShortened", categoryShortened);
       setCategories([...categoryShortened]);
     };
     getCategoryData();
@@ -37,13 +37,22 @@ function SearchPoses({ category, setCategory, setPoses }) {
       try {
         const response = await fetch("/yoga-poses.json");
         const data = await response.json();
-        const poseData = data.items;
+
+        const poseData = data.yoga_poses;
+
+        console.log("This is poseData", poseData);
 
         const searchedPoses = poseData.filter(
           (item) =>
             item.sanskrit_name.toLowerCase().includes(search) ||
-            item.english_name.toLowerCase().includes(search)
+            item.english_name.toLowerCase().includes(search) ||
+            (item.english_name2 &&
+              item.english_name2.toLowerCase().includes(search)) ||
+            (item.english_name3 &&
+              item.english_name3.toLowerCase().includes(search))
         );
+
+        console.log("This is searchedPoses", searchedPoses);
 
         window.scrollTo({ top: 1800, left: 100, behavior: "smooth" });
 
@@ -96,6 +105,8 @@ function SearchPoses({ category, setCategory, setPoses }) {
           Search
         </Button>
       </Box>
+      {console.log("This is categories from SearchPoses", categories)}
+      {console.log("This is category from SearchPoses", category)}
       <Box sx={{ position: "relative", width: "100%", p: "20px" }}>
         <HorizontalScrollbar
           categories={categories}

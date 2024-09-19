@@ -6,9 +6,11 @@ import axios from "axios";
 import PoseVideos from "../components/PoseVideos";
 
 const PoseDetail = () => {
-  const [poseDetail, setPoseDetail] = useState({});
-  const [categoryDetail, setCategoryDetail] = useState("");
+  const [poseDetail, setPoseDetail] = useState([]);
   const [poseVideos, setPoseVideos] = useState([]);
+  const [currentPose, setCurrentPose] = useState([]);
+  const [categoryDetail, setCategoryDetail] = useState("");
+
   const { id } = useParams();
 
   useEffect(() => {
@@ -17,17 +19,21 @@ const PoseDetail = () => {
     const fetchPoseData = async () => {
       // Gets pose image and category information from Yoga API.
 
-      const yogaPoseUrl = "yoga-poses.json";
-
-      const data = await fetch(`${yogaPoseUrl}/${id}`);
+      const data = await fetch("/merged-yoga-poses.json");
       const poseDetailData = await data.json();
 
-      setPoseDetail(poseDetailData);
+      console.log(
+        "This is poseDetailData with yoga poses",
+        poseDetailData.yoga_poses
+      );
+      console.log("This is the id", id);
 
-      let poseCategoryNames = await poseDetailData.yoga_categories
-        .map((item) => item.name)
-        .join(", ");
-      setCategoryDetail(poseCategoryNames);
+      // Filter the poseDetailData to find the pose with the matching id
+      const matchingPose = poseDetailData.yoga_poses.find(
+        (pose) => pose.id == id
+      );
+
+      setCurrentPose(matchingPose);
 
       // Get request with Axios because of API keys.
       // Uses the current pose and returns Youtube search data.
@@ -35,7 +41,7 @@ const PoseDetail = () => {
       await axios
         .get("/youtube", {
           params: {
-            id: poseDetailData.english_name,
+            id: currentPose.english_name,
           },
         })
         .then((response) => {
@@ -48,14 +54,18 @@ const PoseDetail = () => {
     fetchPoseData();
   }, [id]);
 
-  if (!poseDetail) return <div>No Data</div>;
+  if (!currentPose) return <div>No Data</div>;
 
   return (
     <Box sx={{ mt: { lg: "96px", xs: "60px" } }}>
-      <Detail poseDetail={poseDetail} categoryDetail={categoryDetail} />
+      <Detail
+        currentPose={currentPose}
+        poseDetail={poseDetail}
+        categoryDetail={categoryDetail}
+      />
       <PoseVideos
         poseVideos={poseVideos}
-        name={poseDetail.english_name + " Pose"}
+        name={currentPose.english_name + " Pose"}
       />
     </Box>
   );

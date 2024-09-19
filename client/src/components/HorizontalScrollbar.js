@@ -38,7 +38,7 @@ const iconDict = {
   Inversion: inversionIcon,
 };
 
-function LeftArrow() {
+const LeftArrow = () => {
   const { scrollPrev } = useContext(VisibilityContext);
 
   return (
@@ -46,9 +46,9 @@ function LeftArrow() {
       <img src={LeftArrowIcon} alt="right-arrow" />
     </Typography>
   );
-}
+};
 
-function RightArrow() {
+const RightArrow = () => {
   const { scrollNext } = useContext(VisibilityContext);
 
   return (
@@ -56,12 +56,12 @@ function RightArrow() {
       <img src={RightArrowIcon} alt="right-arrow" />
     </Typography>
   );
-}
+};
 
 const HorizontalScrollbar = ({ categories, category, setCategory }) => (
   <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
     {categories.map((item, index) => (
-      <Box key={index} itemId={index} title={item} m="0 60px">
+      <Box key={index} itemID={index} title={item} m="0 60px">
         <Category
           name={item}
           category={category}
