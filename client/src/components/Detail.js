@@ -11,8 +11,9 @@ const Detail = ({ currentPose }) => {
   const { img_url, english_name, sanskrit_name, categories } = currentPose;
 
   const categoryNames = categories.map((category) => category.name);
-
-  console.log("Category names here,", categoryNames);
+  const categoryDescriptions = categories.map(
+    (category) => category.description
+  );
 
   return (
     <Stack
@@ -44,7 +45,14 @@ const Detail = ({ currentPose }) => {
           sx={{ fontSize: { lg: "24px", xs: "18px" } }}
           color="#4F4C4C"
         >
-          {categoryNames}
+          {categoryNames.join(", ")}
+        </Typography>
+
+        <Typography
+          sx={{ fontSize: { lg: "24px", xs: "18px" } }}
+          color="#4F4C4C"
+        >
+          {categoryDescriptions.join(" ")}
         </Typography>
       </Stack>
     </Stack>

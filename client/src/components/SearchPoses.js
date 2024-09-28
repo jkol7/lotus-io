@@ -24,7 +24,6 @@ function SearchPoses({ category, setCategory, setPoses }) {
         categoryShortened.push(word);
       }
 
-      console.log("This is categoryShortened", categoryShortened);
       setCategories([...categoryShortened]);
     };
     getCategoryData();
@@ -40,8 +39,6 @@ function SearchPoses({ category, setCategory, setPoses }) {
 
         const poseData = data.yoga_poses;
 
-        console.log("This is poseData", poseData);
-
         const searchedPoses = poseData.filter(
           (item) =>
             item.sanskrit_name.toLowerCase().includes(search) ||
@@ -51,8 +48,6 @@ function SearchPoses({ category, setCategory, setPoses }) {
             (item.english_name3 &&
               item.english_name3.toLowerCase().includes(search))
         );
-
-        console.log("This is searchedPoses", searchedPoses);
 
         window.scrollTo({ top: 1800, left: 100, behavior: "smooth" });
 
