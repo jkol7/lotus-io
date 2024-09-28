@@ -7,13 +7,6 @@ const app = express();
 
 app.use(cors());
 
-/*
-app.get("/", (req, res) => {
-  res.send("Working main directory");
-});
-
-*/
-
 app.get("/youtube", async (req, res) => {
   const pose = req.query.query;
   const data = await axios({

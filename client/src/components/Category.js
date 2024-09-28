@@ -17,7 +17,6 @@ const Category = ({ name, setCategory, categoryID, iconType }) => (
       gap: "47px",
     }}
     onClick={() => {
-      console.log("Category ID", categoryID);
       setCategory(categoryID);
       window.scrollTo({ top: 1800, left: 100, behavior: "smooth" });
     }}

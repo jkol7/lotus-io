@@ -4,18 +4,13 @@ import { Typography, Box, Stack } from "@mui/material";
 // Maps through poseVideos from Youtube API to create pose video section.
 
 const PoseVideos = ({ poseVideos, name }) => {
-  console.log("The pose videos", poseVideos);
-
   // Filter the poseVideos array to only include objects with a video property
   let filteredPoseVideos = poseVideos?.filter((item) => item.video);
-
-  console.log("The filtered pose videos", filteredPoseVideos);
 
   console.log(
     "The pose sliced",
     filteredPoseVideos?.slice(0, 6).map((item) => item.video.videoId)
   );
-  console.log("The pose name", name);
 
   return (
     <Box sx={{ marginTop: { lg: "0px", xs: "30px" } }} p="20px">

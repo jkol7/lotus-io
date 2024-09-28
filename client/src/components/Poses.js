@@ -8,12 +8,14 @@ const Poses = ({ setPoses, poses, category }) => {
 
   useEffect(() => {
     const getCategoryData = async () => {
-      // const response = await fetch(`yoga-poses.json/${category + 1}`);
       const response = await fetch("/merged-yoga-poses.json");
-
       const data = await response.json();
-      console.log("Here's the pose data", data.yoga_poses);
-      setPoses(data.yoga_poses);
+
+      const filteredPoses = data.yoga_poses.filter((pose) =>
+        pose.yoga_category_ids.includes(category + 1)
+      );
+
+      setPoses(filteredPoses);
     };
     getCategoryData();
   }, [category]);
